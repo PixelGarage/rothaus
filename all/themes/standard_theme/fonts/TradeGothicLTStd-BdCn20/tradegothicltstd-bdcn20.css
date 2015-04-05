@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'TradeGothicLTStdBoldCondensedNo.20';
+    src: url('tradegothicltstd-bdcn20.eot');
+    src: url('tradegothicltstd-bdcn20.eot') format('embedded-opentype'),
+         url('tradegothicltstd-bdcn20.woff2') format('woff2'),
+         url('tradegothicltstd-bdcn20.woff') format('woff'),
+         url('tradegothicltstd-bdcn20.ttf') format('truetype'),
+         url('tradegothicltstd-bdcn20.svg#TradeGothicLTStdBoldCondensedNo.20') format('svg');
+}

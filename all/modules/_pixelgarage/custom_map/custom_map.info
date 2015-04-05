@@ -1,0 +1,10 @@
+name = Custom map
+description = "Provides a views style plugin allowing to display markers and routes in a custom map."
+core = 7.x
+package = Map
+configure = admin/config/content/custom_map
+
+files[] = views_plugin_style_custom_map.inc
+
+dependencies[] = views
+dependencies[] = bundle_copy

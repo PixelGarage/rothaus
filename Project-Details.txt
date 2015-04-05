@@ -1,0 +1,21 @@
+Specific Project Details:
+
+Changes in Modules (Patches)
+============================
+1)
+
+
+Locked Modules (no update)
+===================
+1) Superfish-Dev needed (Accordion for mobile menu)
+2) Better_exposed_filter 3.1 and higher causes errors in i18nviews, don't update
+3) menu_attach_block causes errors, don't update
+4) Views 3.9 and higher has no ajax for exposed filters anymore, use Views 3.8
+
+
+Security settings Going LIVE
+============================
+1) Run security review (fix reported security threads)
+2) Run MD5 Check to create checksum for all modules
+3) Setup aes security (use key in db)
+4) DB backup only with encryption (see Backup and migrate)

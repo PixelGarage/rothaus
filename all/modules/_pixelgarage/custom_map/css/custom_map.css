@@ -1,0 +1,154 @@
+/* =========================================================================================
+ * Use these styling elements to style the custom map and its markers, routes info box etc.
+ * ========================================================================================= */
+
+.custom-map {
+    width: 100%;
+    min-height: 300px;
+}
+
+/* ==================================================================================
+ *   Custom map info box styling
+ * ================================================================================== */
+.view-custom-map .custom-map-container {
+    position: relative;
+}
+.view-custom-map .custom-map-info-box {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 2%;
+    width: 380px;
+    background-color: #396C70;
+}
+body.map-selected .view-custom-map .custom-map-info-box {
+    display: block;
+ /* z-index: 99;
+ Z-Index der Karten Kategorien, Problem, Submenus verschwinden dahinter*/
+}
+.view-custom-map .custom-map-info-box:before,
+.view-custom-map .custom-map-info-box:after {
+    /* arrow on top of group room header */
+    content: ' ';
+    position: absolute;
+    top: -12px;
+    height: 0;
+    margin: 0;
+}
+.view-custom-map .custom-map-info-box.info-visible:before {
+    /* arrow on top of group room header */
+    left: 50%;
+    right: 0;
+    border: none;
+    border-left: 12px solid transparent;
+    border-bottom: 12px solid #396C70;
+}
+.view-custom-map .custom-map-info-box.info-visible:after {
+    /* arrow on top of group room header */
+    left: 0;
+    right: 50%;
+    border: none;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #396C70;
+}
+.view-custom-map .custom-map-info-box:before {
+    /* arrow on top of group room header */
+    left: 0;
+    right: 50%;
+    border: none;
+    border-right: 12px solid #396C70;
+    border-top: 12px solid transparent;
+}
+.view-custom-map .custom-map-info-box:after {
+    /* arrow on top of group room header */
+    left: 50%;
+    right: 0;
+    border: none;
+    border-left: 18px solid #396C70;
+    border-top: 18px solid transparent;
+}
+
+.view-custom-map .custom-map-info-header {
+    position: relative;
+    margin: 8px;
+}
+.view-custom-map .custom-map-info-header > .field {
+    display: inline-block;
+    margin: 0 -8px 0 0;
+    padding: 10px 8px 6px;
+    text-align: center;
+    line-height: 1.2;
+    color: #fff;
+    vertical-align: middle;
+}
+.view-custom-map .custom-map-info-box.info-visible .custom-map-info-header > .field {
+    color: #1D3D41;
+    margin: 0 -12px 0 8px;
+}
+.view-custom-map .custom-map-info-header .field-name-title h2 {
+    margin: 0;
+    padding: 0;
+    font-family: 'TradeGothicLTStdBold',Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.view-custom-map .custom-map-info-header .field-name-field-short-description {
+    margin: 0;
+    font-family: 'TradeGothicLTStdRegular',Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    border-left: 1px dashed #1D3D41;
+}
+
+.view-custom-map .custom-map-info-body {
+    display: block;
+    position: relative;
+    overflow-y: auto;
+    max-height: 400px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 8px;
+}
+.view-custom-map .custom-map-info-body .field-name-body {
+    padding: 8px;
+    color: #fff;
+    text-align: left;
+}
+.view-custom-map .custom-map-info-body .field-name-body h1,
+.view-custom-map .custom-map-info-body .field-name-body h2,
+.view-custom-map .custom-map-info-body .field-name-body h3,
+.view-custom-map .custom-map-info-body .field-name-body h4 {
+    margin: 0 0 14px;
+    font-family: 'ClarendonLTStdRoman', Georgia, "Times New Roman", Times, serif;
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #fff;
+}
+.view-custom-map .custom-map-info-body .field-name-body p {
+    margin: 0 0 14px;
+    font-family: 'TradeGothicLTStdCn-18', "Arial Narrow", sans-serif;
+    font-size: 15px;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.view-custom-map .custom-map-info-body .field-name-field-special-link {
+    position: absolute;
+    top: -4px;
+    right: 0.5em;
+    padding: 6px;
+}
+.view-custom-map .custom-map-info-body .field-name-field-special-link a {
+    padding: 0.4em 0.5em 0;
+    font-family: 'TradeGothicLTStdRegular', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 0.25em;
+}
+

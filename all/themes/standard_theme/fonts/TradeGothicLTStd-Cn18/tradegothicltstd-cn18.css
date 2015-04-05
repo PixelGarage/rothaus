@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'TradeGothicLTStdCondensedNo.18';
+    src: url('tradegothicltstd-cn18.eot');
+    src: url('tradegothicltstd-cn18.eot') format('embedded-opentype'),
+         url('tradegothicltstd-cn18.woff2') format('woff2'),
+         url('tradegothicltstd-cn18.woff') format('woff'),
+         url('tradegothicltstd-cn18.ttf') format('truetype'),
+         url('tradegothicltstd-cn18.svg#TradeGothicLTStdCondensedNo.18') format('svg');
+}

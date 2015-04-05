@@ -1,0 +1,2841 @@
+/*
+ * @file
+ * global.styles
+ *
+ * Styles you add here will load for all device sizes, they are "global", as
+ * opposed to "responsive" styles, which only load for a given breakpoint (media
+ * query) that you set in theme settings. See the README for more details.
+ *
+ *
+ * How to use this file:
+ * --------------------
+ *
+ * There are many empty selectors and some basic styles to act as a guide.
+ * Nothing is set in stone and you can change anything - even delete all of it
+ * and start with your own clean slate.
+ *
+ * See global.base also which includes normalize.css and some additional
+ * helper classes and base styles.
+ *
+ *
+ *
+ *  Style precedence in CSS (Specificity, Inheritance, Cascade)
+ *  -----------------------------------------------------------
+ *
+ *  Specificity:    a) Inline Style
+ *  (a,b,c,d)       b) Id
+ *                  c) Class, Pseudo-class, attribute
+ *                  d) Element, pseuo-element
+ *
+ *                          Example: div#sidebar p.bio -> 2 elements, 1 class, 1 id –> (0,1,1,2)
+ *
+ *
+ *  Inheritance:    Elements inherit styles from their parent container.
+                    "inherit" let you inherit margin, padding etc. from parent container.
+ *
+ *
+ *  Cascade:        - Site-Author (these files) OVER Site-User(Style settings in browser) OVER Browser Defaults
+ *                  - !importance has more weight than normal declarations
+ *                  - Equal specificity: last wins
+ *
+ *                  TIP: Normalizing (see above) takes browser defaults and cross browser issues out of equation!!!
+ */
+
+/* =============================================================================
+ *   Colors used for web site
+ * =============================================================================
+    text-black:         #222222
+    text-white:         #eeeeee
+    text-hover:         #808080
+    light-green:        #396C70, rgba(57,108,112,1.0)
+    dark-green:         #1D3D41, rgba(29,61,65,1.0)
+    logo-red:           #C62F20, rgba(198,47,32,1.0)
+    logo-gray:          #f2f2f2, rgba(242,242,242,1.0)
+    background day:     #e6e6e6,
+    marker-red:         #b51a00
+
+  =============================================================================*/
+
+
+/* =============================================================================
+ *   Fonts
+ * ========================================================================== */
+@font-face {
+    font-family: 'ClarendonLTStdRoman';
+    src: url('../fonts/ClarendonLTStd/clarendonltstd.eot');
+    src: url('../fonts/ClarendonLTStd/clarendonltstd.eot') format('embedded-opentype'),
+    url('../fonts/ClarendonLTStd/clarendonltstd.woff2') format('woff2'),
+    url('../fonts/ClarendonLTStd/clarendonltstd.woff') format('woff'),
+    url('../fonts/ClarendonLTStd/clarendonltstd.ttf') format('truetype'),
+    url('../fonts/ClarendonLTStd/clarendonltstd.svg#ClarendonLTStdRoman') format('svg');
+}
+@font-face {
+    font-family: 'TradeGothicLTStdRegular';
+    src: url('../fonts/TradeGothicLTStd/tradegothicltstd.eot');
+    src: url('../fonts/TradeGothicLTStd/tradegothicltstd.eot') format('embedded-opentype'),
+    url('../fonts/TradeGothicLTStd/tradegothicltstd.woff2') format('woff2'),
+    url('../fonts/TradeGothicLTStd/tradegothicltstd.woff') format('woff'),
+    url('../fonts/TradeGothicLTStd/tradegothicltstd.ttf') format('truetype'),
+    url('../fonts/TradeGothicLTStd/tradegothicltstd.svg#TradeGothicLTStdRegular') format('svg');
+}
+@font-face {
+    font-family: 'TradeGothicLTStdBold';
+    src: url('../fonts/TradeGothicLTStd-Bold/tradegothicltstd-bold.eot');
+    src: url('../fonts/TradeGothicLTStd-Bold/tradegothicltstd-bold.eot') format('embedded-opentype'),
+    url('../fonts/TradeGothicLTStd-Bold/tradegothicltstd-bold.woff2') format('woff2'),
+    url('../fonts/TradeGothicLTStd-Bold/tradegothicltstd-bold.woff') format('woff'),
+    url('../fonts/TradeGothicLTStd-Bold/tradegothicltstd-bold.ttf') format('truetype'),
+    url('../fonts/TradeGothicLTStd-Bold/tradegothicltstd-bold.svg#TradeGothicLTStdBold') format('svg');
+}
+@font-face {
+    font-family: 'TradeGothicLTStdBoldCn-20';
+    src: url('../fonts/TradeGothicLTStd-BdCn20/tradegothicltstd-bdcn20.eot');
+    src: url('../fonts/TradeGothicLTStd-BdCn20/tradegothicltstd-bdcn20.eot') format('embedded-opentype'),
+    url('../fonts/TradeGothicLTStd-BdCn20/tradegothicltstd-bdcn20.woff2') format('woff2'),
+    url('../fonts/TradeGothicLTStd-BdCn20/tradegothicltstd-bdcn20.woff') format('woff'),
+    url('../fonts/TradeGothicLTStd-BdCn20/tradegothicltstd-bdcn20.ttf') format('truetype'),
+    url('../fonts/TradeGothicLTStd-BdCn20/tradegothicltstd-bdcn20.svg#TradeGothicLTStdBoldCondensedNo.20') format('svg');
+}
+@font-face {
+    font-family: 'TradeGothicLTStdCn-18';
+    src: url('../fonts/TradeGothicLTStd-Cn18/tradegothicltstd-cn18.eot');
+    src: url('../fonts/TradeGothicLTStd-Cn18/tradegothicltstd-cn18.eot') format('embedded-opentype'),
+    url('../fonts/TradeGothicLTStd-Cn18/tradegothicltstd-cn18.woff2') format('woff2'),
+    url('../fonts/TradeGothicLTStd-Cn18/tradegothicltstd-cn18.woff') format('woff'),
+    url('../fonts/TradeGothicLTStd-Cn18/tradegothicltstd-cn18.ttf') format('truetype'),
+    url('../fonts/TradeGothicLTStd-Cn18/tradegothicltstd-cn18.svg#TradeGothicLTStdCondensedNo.18') format('svg');
+}
+@font-face {
+    font-family: 'TradeGothicLTStdLight';
+    src: url('../fonts/TradeGothicLTStd-Light/tradegothicltstd-light.eot');
+    src: url('../fonts/TradeGothicLTStd-Light/tradegothicltstd-light.eot') format('embedded-opentype'),
+    url('../fonts/TradeGothicLTStd-Light/tradegothicltstd-light.woff2') format('woff2'),
+    url('../fonts/TradeGothicLTStd-Light/tradegothicltstd-light.woff') format('woff'),
+    url('../fonts/TradeGothicLTStd-Light/tradegothicltstd-light.ttf') format('truetype'),
+    url('../fonts/TradeGothicLTStd-Light/tradegothicltstd-light.svg#TradeGothicLTStdLight') format('svg');
+}
+
+@font-face {
+    font-family: "SSGlyphish";
+    src: url('../fonts/ss-glyphish-outlined/ss-glyphish-outlined.eot');
+    src: url('../fonts/ss-glyphish-outlined/ss-glyphish-outlined.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/ss-glyphish-outlined/ss-glyphish-outlined.woff') format('woff'),
+    url('../fonts/ss-glyphish-outlined/ss-glyphish-outlined.ttf')  format('truetype'),
+    url('../fonts/ss-glyphish-outlined/ss-glyphish-outlined.svg#SSGlyphishOutlined') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "SSGlyphishFilled";
+    src: url('../fonts/ss-glyphish-filled/ss-glyphish-filled.eot');
+    src: url('../fonts/ss-glyphish-filled/ss-glyphish-filled.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/ss-glyphish-filled/ss-glyphish-filled.woff') format('woff'),
+    url('../fonts/ss-glyphish-filled/ss-glyphish-filled.ttf')  format('truetype'),
+    url('../fonts/ss-glyphish-filled/ss-glyphish-filled.svg#SSGlyphishFilled') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+/* =============================================================================
+ *   General reset
+ * ========================================================================== */
+#main-content,
+.block-inner,
+.pane-inner,
+.menu-wrapper,
+.branding-elements,
+.breadcrumb-wrapper,
+.attribution,
+.at-panel .rounded-corner,
+.block-panels-mini > .block-title,
+div.messages,
+#content .panel-display,
+#content .panel-flexible {
+    margin: 0;
+}
+
+/*
+ * AT regions (top and nested regions)
+ */
+.at-panel > .region > .region-inner,
+.at-panel .at-panel > .region > .region-inner {
+    margin: 0;
+}
+
+/*
+ * Blocks
+ */
+.block,
+.block > .block-inner,
+.block .block-title {
+    margin: 0;
+}
+
+
+/* =============================================================================
+ *   Base
+ * ========================================================================== */
+
+/*
+ * To preserve theme settings never apply font properties to the HTML element.
+ * This is critically important if you are using the Responsive JavaScript
+ * feature as this relies on being able to set a pseudo font family on the HTML
+ * element. If you need to set default font properties of any kind use the BODY
+ * element as these can be overridden using font theme settings.
+ */
+
+html {
+    background-color: #fff;
+    height: 100%;
+}
+
+
+body {
+    font-family: "TradeGothicLTStdRegular", Arial, Helvetica, sans-serif;
+    font-size: 100%;  /* corresponds to 16px */
+    height: 100%;
+    min-width: 320px; /* no smaller devices than 320px wide*/
+    background-color: #e6e6e6;
+}
+body.map-selected {
+    background-color: #1D3D41;
+}
+
+
+/* =============================================================================
+ *   HTML Elements
+ * ========================================================================== */
+/* and if we have headings with defined styles we'd also add */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;   /* unitless line-height: element multiply this value with its computed font-sizes */
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.1;     /* unitless line-height: element multiply this value with its computed font-sizes */
+}
+
+
+pre,
+code,
+tt,
+samp,
+kbd,
+var {
+    font-family: Consolas, Monaco, 'Courier New', Courier, monospace, sans-serif;
+}
+
+/* =============================================================================
+ *   Links and fields
+ * ========================================================================== */
+a,
+a:link,
+a:visited {
+    outline: none;
+    text-decoration: none;
+    color: #222;
+}
+
+a:active,
+a.active,
+a:hover,
+a:focus {
+    outline: none;
+    text-decoration: underline;
+    color: #365C6E;
+}
+
+/*
+ *  Text areas resizing handlers
+ */
+.resizable-textarea .grippie {
+    display: none;
+}
+
+.field-label {
+    /* table layout */
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: bold;
+    color: #222;
+    width: 7em;
+}
+
+/* Read more link */
+.field-name-node-link {
+    margin: 0 1.2em;
+    float: right;
+}
+.field-name-node-link a:after {
+    content: '\f054';
+    font-family: "fontawesome";
+    font-size: 1em;
+    padding-left: 1em;
+}
+
+/* Google map */
+.google_map_field_display {
+    height: 20em;
+    width: 100%;
+    margin: 0;
+}
+
+/* =============================================================================
+ *   Wrappers
+ * ========================================================================== */
+#page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+#page-title {
+    margin: 0 0.625em;
+}
+
+#header,
+#menu-bar,
+#breadcrumb,
+#messages,
+#columns,
+#comments,
+#footer,
+.region-leaderboard,
+.region-help,
+.region-secondary-content,
+.region-tertiary-content {
+    width: 100%;
+    margin: 0;
+}
+
+/*
+ * Header wrapper
+ */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height:80px;
+    width: auto;
+    background-color: #e6e6e6;
+    z-index: 20;
+}
+body.map-selected #header {
+    background-color: #1D3D41;
+}
+
+#header .region-header {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+}
+#header .region-header .region-inner {
+    position: relative;
+}
+/*
+ *  message panel
+ */
+#messages {
+    position: absolute;
+    bottom: 0;
+    min-height: 40px;
+}
+
+#messages > div.messages {
+    margin: 0 auto;
+    width: 60%;
+    min-width: 300px;
+    border-radius: 0.4em 0.4em 0 0;
+}
+/*
+ * Main content wrapper
+ */
+#columns {
+    height: 100%;
+}
+#columns > #content-column {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 75px 0 0;
+    width: 100%;
+    min-height: 100%;
+    background-color: #fff;
+}
+#columns .region-content-main,
+#columns .region-content-aside {
+    position: relative;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    margin: 0;
+    width: 0;
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    transition: width 0.3s;
+}
+#columns .region-content-main.selected,
+#columns .region-content-aside.selected {
+    display: inline-block;
+    width: 100%;
+}
+/*
+ * Footer wrapper
+ */
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    width: auto;
+    background-color: #e6e6e6;
+    z-index: 10;
+}
+body.map-selected #footer {
+    background-color: #1D3D41;
+}
+#footer .region-footer {
+    position: relative;
+}
+#footer .contact-block .node-contacts.node-teaser{
+    display: none;
+    position: absolute;
+    bottom: -40px;
+    right: 20px;
+    width: 240px;
+    height: 120px;
+    box-shadow: 5px 5px 12px -4px rgba(198,47,32,0.8);
+    z-index: 11;
+}
+#footer .contact-block .node-contacts.node-full {
+    display: none;
+    position: absolute;
+    bottom: -45px;
+    right: 20px;
+    height: auto;
+    z-index: 11;
+}
+
+/* ==================================================================================
+ *   Switcher button styling
+ * ================================================================================== */
+#columns .region-content-main .switch-to-home,
+#columns .region-content-aside .switch-to-map {
+    display: none;
+    position: absolute;
+    cursor: pointer;
+    top: 40px;
+    width: 40px;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+}
+#columns .region-content-main .switch-to-home:before {
+    content: "\2302";
+    font-family: "SSGlyphishFilled";
+    font-size: 20px;
+    line-height: 80px;
+    color: #fff;
+    text-align: center;
+    padding: 15px 10px;
+}
+#columns .region-content-aside .switch-to-map:before {
+    content: "\1f30e";
+    font-family: "SSGlyphishFilled";
+    font-size: 20px;
+    color: #396C70;
+    line-height: 80px;
+    text-align: center;
+    padding: 15px 10px;
+}
+#columns .region-content-aside .switch-to-map:hover:before,
+#columns .region-content-main .switch-to-home:hover:before {
+    color: #1D3D41;
+}
+#columns .region-content-main:not(.selected) .switch-to-home {
+    display: inline-block;
+    right: -40px;
+    background-color: #396C70;
+}
+#columns .region-content-aside:not(.selected) .switch-to-map {
+    display: inline-block;
+    left: -40px;
+    background-color: #e6e6e6;
+}
+
+/* =============================================================================
+ *   Branding
+ * ========================================================================== */
+/*
+ * Wraps all the branding elements, logo, name and slogan
+ */
+#branding {
+    position: relative;
+    margin: 0;
+}
+
+/*
+ * Logo
+ */
+#logo {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 100px;
+    height: 44px;
+    padding: 0;
+    margin: 0;
+    box-shadow: 5px 5px 12px -4px rgba(198,47,32,0.8);
+    z-index: 21;
+}
+#logo img {
+    width: auto;
+    height: 100%;
+}
+
+
+/* =============================================================================
+ *   Language switcher menu
+ * ========================================================================== */
+#block-locale-language {
+    display:inline-block;
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    padding: 0;
+}
+#block-locale-language ul.language-switcher-locale-url {
+    list-style: none none;
+    margin: 0;
+}
+#block-locale-language ul.language-switcher-locale-url li {
+    display: inline;
+    height: 2em;
+}
+#block-locale-language ul li a {
+    padding: 0 0.3em;
+    font-family: 'TradeGothicLTStdLight', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1.1;
+    color: #396C70;
+    text-align: left;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-right: 1px solid #396C70;
+    outline: 0;
+}
+#block-locale-language ul li.last a {
+    padding-right: 0;
+    border-right: 0;
+}
+#block-locale-language ul li a:hover,
+#block-locale-language ul li a:active,
+#block-locale-language ul li a.active {
+    outline: 0;
+    color: #1D3D41;
+    text-decoration: none;
+    outline: 0;
+}
+body.map-selected #block-locale-language li a {
+    color: #396C70;
+}
+body.map-selected #block-locale-language li a:hover,
+body.map-selected #block-locale-language li a:active,
+body.map-selected #block-locale-language li a.active {
+    color: #fff;
+}
+
+#block-locale-language ul li span.locale-untranslated {
+    outline: 0;
+    color: #1D3D41;
+}
+body.map-selected #block-locale-language ul li span.locale-untranslated {
+    outline: 0;
+    color: #396C70;
+}
+
+
+/* =============================================================================
+ *   Primary, Secondary and Menu Bar region menus
+ * ========================================================================== */
+/*
+ * Use one of the following id's for granular control:
+ *  - #menu-bar (menu bar region)
+ *  - #primary-menu (main menu)
+ *  - #secondary-menu (secondary/user menu)
+ * You can target all of these with .nav or div[id$="menu-bar"]
+ */
+
+#block-superfish-1 {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px 10px 0 0;
+    width: 100%;
+}
+
+/* =============================================================================
+ *   Superfish accordion menu (Mobile first)
+ * ========================================================================== */
+/*
+  * Toggle button
+  */
+div.sf-accordion-toggle {
+    float: right;
+}
+a#superfish-1-toggle {
+    outline: none;
+}
+a#superfish-1-toggle:before {
+    font-family: FontAwesome;
+    content: "\f0c9";
+    display: inline-block;
+    padding: 0;
+    font-size: 20px;
+    color: #396C70;
+}
+a#superfish-1-toggle span {
+    display: none;
+}
+a#superfish-1-toggle.sf-expanded:before {
+    font-family: FontAwesome;
+    content: "\f0c9";
+    display: inline-block;
+    padding: 0;
+    color: #396C70;
+    font-size: 20px;
+}
+
+/*
+ * Accordion menu
+ */
+#superfish-1-accordion {
+    margin: 10px 0 0 20px;
+    padding: 10px 0;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 5px 5px 12px -4px rgba(120,120,120,0.8);
+}
+#superfish-1-accordion:before,
+#superfish-1-accordion:after {
+    /* arrow on top of menu container */
+    content: ' ';
+    position: absolute;
+    top: -12px;
+    height: 0;
+    margin: 0;
+}
+#superfish-1-accordion:before {
+    /* left arrow part */
+    left: 0;
+    right: 10%;
+    border: none;
+    border-right: 12px solid #fff;
+    border-top: 12px solid transparent;
+}
+#superfish-1-accordion:after {
+    /* right arrow part */
+    left: 90%;
+    right: 0;
+    border: none;
+    border-left: 12px solid #fff;
+    border-top: 12px solid transparent;
+}
+
+#superfish-1-accordion li {
+    /* all list items */
+    display: block;
+    margin: 0;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+#superfish-1-accordion li > ul {
+    /* second level menu */
+    margin: 0 10%;
+    width: 80%;
+}
+
+#superfish-1-accordion li a,
+#superfish-1-accordion li span {
+    /* all link items */
+    padding: 8px 10px 4px;
+    font-family: 'TradeGothicLTStdBold', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1.1;
+    color: #1D3D41;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    outline: 0;
+    border-bottom: 1px dashed #1D3D41;
+}
+#superfish-1-accordion li span:hover,
+#superfish-1-accordion li a:hover,
+#superfish-1-accordion li a:focus,
+#superfish-1-accordion li a:active,
+#superfish-1-accordion li a.active {
+    /* all link items hovering */
+    outline: 0;
+    color: #3E9196;/*#396C70;*/
+    text-decoration: none;
+}
+
+
+
+/* =============================================================================
+ *   Superfish menu normal (flexible breakpoint Mobile - Normal)
+ * ========================================================================== */
+#superfish-1 {
+    float: left; /* float parent to contain children */
+    width: 100%;
+    color: #396C70;
+    white-space: nowrap;
+}
+#superfish-1 div.contextual-links-wrapper {
+/* place contextual links on the rigth side */
+    right: 0;
+    top: 5px;
+    z-index: 999;
+}
+#superfish-1 div.contextual-links-wrapper > a {
+    text-indent: -9999px;
+    border: none !important;
+}
+
+/* menu container */
+#superfish-1 ul {
+    /* general sub-menu container */
+    margin: -4px 0 0;
+    padding: 10px 0 0;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 5px 5px 12px -4px rgba(120,120,120,0.8);
+}
+#superfish-1 >li > ul:before,
+#superfish-1 >li > ul:after {
+    /* arrow on top of menu container */
+    content: ' ';
+    position: absolute;
+    top: -12px;
+    height: 0;
+    margin: 0;
+}
+#superfish-1 >li > ul:before {
+    /* left arrow part */
+    left: 0;
+    right: 80%;
+    border: none;
+    border-right: 12px solid #fff;
+    border-top: 12px solid transparent;
+}
+#superfish-1 >li > ul:after {
+    /* right arrow part */
+    left: 20%;
+    right: 0;
+    border: none;
+    border-left: 12px solid #fff;
+    border-top: 12px solid transparent;
+}
+
+
+/*
+ * top-level menu
+ */
+#superfish-1 li.sf-depth-1 {
+    float: right;
+    margin: 0;
+    padding-right: 8px;
+}
+#superfish-1 li.sf-depth-1 > a,
+#superfish-1 li.sf-depth-1 > span {
+    margin: 0;
+    padding: 0;
+    font-family: 'TradeGothicLTStdLight', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #396C70;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    outline: 0;
+    border: none;
+}
+#superfish-1 li.sf-depth-1 > a:hover,
+#superfish-1 li.sf-depth-1 > span:hover,
+#superfish-1 li.sf-depth-1.sfHover {
+    outline: 0;
+    color: #1D3D41;
+}
+body.map-selected #superfish-1 li.sf-depth-1 > a,
+body.map-selected #superfish-1 li.sf-depth-1 > span {
+    color: #fff;
+}
+body.map-selected #superfish-1 li.sf-depth-1 > a:hover,
+body.map-selected #superfish-1 li.sf-depth-1 > span:hover,
+body.map-selected #superfish-1 li.sf-depth-1.sfHover {
+    color: #396C70;
+}
+
+/* Explore menu */
+#superfish-1 li#menu-1826-1 {
+    cursor: pointer;
+}
+
+/* Booking menu */
+#superfish-1 li#menu-2032-1 {
+    padding: 0;
+}
+#superfish-1 li#menu-2032-1 > span {
+    cursor: pointer;
+    margin-top: -11px;
+    padding: 10px 8px 5px;
+    width: auto;
+    text-align: center;
+    border: 1px solid #396C70;
+    border-radius: 0.3em;
+}
+#superfish-1 li#menu-2032-1 > span:hover {
+    border: 1px solid #1D3D41;
+    background-color: rgba(255,255,255, 0.6);
+}
+body.map-selected #superfish-1 li#menu-2032-1 > span {
+    border: 1px solid #fff;
+}
+body.map-selected #superfish-1 li#menu-2032-1 > span:hover {
+    border: 1px solid #396C70;
+    background-color: rgba(255,255,255, 0.6);
+}
+
+/*
+ * dropdown menus
+ */
+#superfish-1 li.sf-depth-2 a,
+#superfish-1 li.sf-depth-2 span.menu-gallery,
+#superfish-1 li.sf-depth-2 a:link {
+    padding: 6px 10px 4px;
+    font-family: 'TradeGothicLTStdBold', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1.1;
+    color: #1D3D41;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    outline: 0;
+    border-bottom: 1px dashed #1D3D41;
+}
+#superfish-1 li.sf-depth-2 .views-row-last a {
+    border: none;
+}
+#superfish-1 li.sf-depth-2 a:hover,
+#superfish-1 li.sf-depth-2 a:focus,
+#superfish-1 li.sf-depth-2 a:active,
+#superfish-1 li.sf-depth-2 a.active {
+    outline: 0;
+    color: #3E9196;/*#396C70;*/
+    text-decoration: none;
+}
+
+/* =============================================================================
+ *   Special menu settings (accordion and main menu)
+ * ========================================================================== */
+/*
+ *  Rooms menu
+ */
+/* Special rooms menus */
+#superfish-1-accordion .menu-special-rooms,
+#superfish-1 .menu-special-rooms {
+    margin: 0;
+    padding: 8px 0;
+    background-color: #1D3D41;
+}
+#superfish-1 .menu-special-rooms {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+#superfish-1-accordion li.sf-depth-2 span.menu-special-rooms-title,
+#superfish-1 li.sf-depth-2 span.menu-special-rooms-title {
+    padding: 0 10px;
+    font-size: 0.7em;
+    color: #396C70;
+    background-color: #1D3D41;
+}
+#superfish-1-accordion li.sf-depth-2 .menu-special-rooms .view a,
+#superfish-1-accordion li.sf-depth-2 .menu-special-rooms .view a:link,
+#superfish-1 li.sf-depth-2 .menu-special-rooms .view a,
+#superfish-1 li.sf-depth-2 .menu-special-rooms .view a:link {
+    color: #396C70;
+    border: none;
+}
+#superfish-1-accordion li.sf-depth-2 .menu-special-rooms .view a:hover,
+#superfish-1-accordion li.sf-depth-2 .menu-special-rooms .view a:focus,
+#superfish-1 li.sf-depth-2 .menu-special-rooms .view a:hover,
+#superfish-1 li.sf-depth-2 .menu-special-rooms .view a:focus{
+    color: #fff;
+    border: none;
+}
+
+/*
+ *  Endtecken menu
+ */
+#superfish-1-accordion li.sf-depth-2 div.menu-attach-block-wrapper,
+#superfish-1 li.sf-depth-2 div.menu-attach-block-wrapper {
+    display: block;
+}
+#superfish-1-accordion li.sf-depth-2 div.menu-attach-block-wrapper form,
+#superfish-1-accordion li.sf-depth-2 div.menu-attach-block-wrapper form .views-exposed-form div,
+#superfish-1 li.sf-depth-2 div.menu-attach-block-wrapper form,
+#superfish-1 li.sf-depth-2 div.menu-attach-block-wrapper form .views-exposed-form div{
+    width: 100%;
+    padding: 0;
+}
+#superfish-1-accordion li.sf-depth-2 .views-exposed-form #edit-field-day-night-tid-wrapper,
+#superfish-1 li.sf-depth-2 .views-exposed-form #edit-field-day-night-tid-wrapper{
+    display: none;
+}
+#superfish-1-accordion li.sf-depth-2 .views-exposed-form .form-radios .form-item,
+#superfish-1 li.sf-depth-2 .views-exposed-form .form-radios .form-item {
+    border-bottom: 1px dashed #1D3D41;
+}
+#superfish-1-accordion li.sf-depth-2 .views-exposed-form .form-radios .form-item:last-child,
+#superfish-1 li.sf-depth-2 .views-exposed-form .form-radios .form-item:last-child {
+    border: none;
+}
+#superfish-1-accordion li.sf-depth-2 .views-exposed-form .form-radios .form-item input,
+#superfish-1 li.sf-depth-2 .views-exposed-form .form-radios .form-item input{
+    display: none;
+}
+#superfish-1-accordion li.sf-depth-2 .views-exposed-form .form-radios .form-item label,
+#superfish-1 li.sf-depth-2 .views-exposed-form .form-radios .form-item label {
+    padding: 6px 10px 4px;
+    font-family: 'TradeGothicLTStdBold', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1.1;
+    color: #1D3D41;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#superfish-1-accordion li.sf-depth-2 .views-exposed-form .form-radios .form-item label:hover,
+#superfish-1-accordion li.sf-depth-2 .views-exposed-form .form-radios .form-item input:checked + label,
+#superfish-1 li.sf-depth-2 .views-exposed-form .form-radios .form-item label:hover,
+#superfish-1 li.sf-depth-2 .views-exposed-form .form-radios .form-item input:checked + label{
+    color: #3E9196;/*#396C70;*/
+    text-decoration: none;
+}
+
+/*
+ *  Hotel menu
+ */
+/* Hotel gallery menu */
+#superfish-1 li.sf-depth-2 span.menu-gallery {
+    border: none;
+    border-top: 1px dashed #1D3D41;
+}
+#superfish-1-accordion li.sf-depth-2 span.menu-gallery,
+#superfish-1-accordion li.sf-depth-3 .views-row-last a {
+    border: none;
+}
+#superfish-1 li.sf-depth-2 span.menu-gallery:hover,
+#superfish-1 li.sf-depth-2 span.menu-gallery:active,
+#superfish-1 li.sf-depth-2 span.menu-gallery.active {
+    outline: 0;
+    color: #3E9196;/*#396C70;*/
+    text-decoration: none;
+}
+/* second level gallery menu  */
+#superfish-1 #menu-2116-1 > ul,
+#superfish-1 #menu-2120-1 > ul {
+    display: none;
+    position: static;
+    list-style: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0 0 0 16px;
+    width: 100%;
+    border: none;
+}
+
+/* Special hotel menus */
+#superfish-1-accordion li.sf-depth-2 span.menu-copyright,
+#superfish-1 li.sf-depth-2 span.menu-copyright {
+    padding: 10px 10px 0;
+    font-size: 0.7em;
+    color: #396C70;
+    background-color: #1D3D41;
+}
+#superfish-1-accordion li.sf-depth-2 .menu-impressum,
+#superfish-1 li.sf-depth-2 .menu-impressum {
+    color: #396C70;
+    background-color: #1D3D41;
+}
+#superfish-1 li.sf-depth-2 .menu-impressum {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+#superfish-1-accordion li.sf-depth-2 .menu-impressum:hover,
+#superfish-1 li.sf-depth-2 .menu-impressum:hover {
+    color: #fff;
+}
+
+/*
+ *  Booking menu
+ */
+#superfish-1-accordion > li#menu-2032-1 > ul {
+    display: none !important;
+}
+#superfish-1 > li#menu-2032-1 > ul {
+    display: block;
+    cursor: pointer;
+    margin: 0;
+    padding: 10px;
+    white-space: normal;
+    max-width: 10.5em;
+    background-color: #C62F20;
+}
+#superfish-1 >li#menu-2032-1 > ul:before {
+    right: 50%;
+    border-right: 12px solid #C62F20;
+}
+#superfish-1 >li#menu-2032-1 > ul:after {
+    left: 50%;
+    border-left: 12px solid #C62F20;
+}
+
+#superfish-1 li#menu-2032-1 li.sf-depth-2 div.block-booking-gift .field-name-body .book-now {
+    padding: 3px 0 3px 30px;
+    font-family: 'TradeGothicLTStdLight', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 1.1;
+    color: #fff;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#superfish-1 li#menu-2032-1 li.sf-depth-2 div.block-booking-gift .field-name-body .book-now:before {
+    font-family: "SSGlyphishFilled";
+    content: '\1f381';
+    font-size: 20px;
+    display: inline-block;
+    margin-left: -30px;
+    padding: 5px 5px 0 3px;
+}
+#superfish-1 li#menu-2032-1 li.sf-depth-2 div.block-booking-gift .field-name-body .get-gift {
+    padding: 3px 0 3px 30px;
+    font-family: 'ClarendonLTStdRoman', Georgia, "Times New Roman", Times, serif;
+    font-size: 14px;
+    line-height: 1.1;
+    color: #fff;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#superfish-1 a > .sf-sub-indicator {
+    display: none;  /* no drop-down arrow */
+}
+
+
+/* =============================================================================
+ *   Superfish map controls menu
+ * ========================================================================== */
+#columns .region-content-aside #block-superfish-2 {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    width: 25px;
+}
+#columns .region-content-aside.selected #block-superfish-2 {
+    display: block;
+}
+/* first level menus */
+#superfish-2 li.sf-depth-1 {
+    z-index: 15;
+}
+#superfish-2 li.sf-depth-1 span {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 25px;
+    height: 25px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #396C70;
+    cursor: pointer;
+}
+#superfish-2 li.sf-depth-1 span:hover {
+    color: #1D3D41;
+}
+#superfish-2 li.sf-depth-1 span#menu-zoom-out {
+    margin-bottom: 15px;
+}
+#superfish-2 li.sf-depth-1 span#menu-zoom-in:before {
+    font-family: "SSGlyphish";
+    content:'+';
+    display: inline-block;
+    padding: 5px 5px 0 3px;
+}
+#superfish-2 li.sf-depth-1 span#menu-zoom-out:before {
+    font-family: "SSGlyphish";
+    content: "-";
+    display: inline-block;
+    padding: 5px 5px 0 3px;
+}
+#superfish-2 li.sf-depth-1 span#menu-filter:before {
+    font-family: "SSGlyphish";
+    content: "\ED51";
+    display: inline-block;
+    padding: 5px 5px 0 3px;
+}
+#superfish-2 li.sf-depth-1 span#menu-day-night:before {
+    font-family: "SSGlyphish";
+    content: "\1f506";
+    display: inline-block;
+    font-size: 10px;
+    padding: 9px 15px 0 2px;
+}
+#superfish-2 li.sf-depth-1 span#menu-day-night:after {
+    font-family: "SSGlyphish";
+    content: "\1f319";
+    display: inline-block;
+    font-size: 10px;
+    margin: 0 -33px;
+    padding: 9px 15px 0 0;
+}
+
+/* first level menus */
+#superfish-2 li.sf-depth-1 > ul {
+    margin: 0 12px;
+    width:150px !important;
+    background-color: #396C70;
+    z-index: 50;
+}
+#superfish-2 >li > ul:before,
+#superfish-2 >li > ul:after {
+    /* arrow right top of menu container */
+    content: ' ';
+    position: absolute;
+    width: 0;
+    margin: 0;
+}
+#superfish-2 >li > ul:before {
+    /* top arrow part */
+    top: 0;
+    bottom: 100%;
+    border: none;
+    border-bottom: 12px solid #396C70;
+    border-right: 12px solid transparent;
+}
+#superfish-2 >li > ul:after {
+    /* bottom arrow part */
+    top: 12px;
+    bottom: 0;
+    border: none;
+    border-right: 12px solid transparent;
+    border-top: 12px solid #396C70;
+}
+
+#superfish-2 li.sf-depth-2 div.menu-attach-block-wrapper {
+    display: block;
+    padding: 12px;
+    box-shadow: 0 0 5px 0 rgba(198, 47, 32, 0.8);
+}
+#superfish-2 li.sf-depth-2 div.menu-attach-block-wrapper form,
+#superfish-2 li.sf-depth-2 div.menu-attach-block-wrapper form .views-exposed-form div {
+    width: 100%;
+    padding: 0;
+}
+#superfish-2 li#menu-2026-2 .block-marker-filters .views-exposed-form #edit-field-day-night-tid-wrapper {
+    /* filter menu */
+    display: none;
+}
+#superfish-2 li#menu-2027-2 .block-marker-filters .views-exposed-form #edit-field-filter-tags-tid-wrapper {
+    /* day-night menu */
+    display: none;
+}
+#superfish-2 li#menu-2027-2 .block-marker-filters .views-exposed-form #edit-field-day-night-tid-wrapper label[for="edit-field-day-night-tid-all"] {
+    display: none;
+}
+
+#superfish-2 li.sf-depth-2 .views-exposed-form .form-checkboxes .form-item input,
+#superfish-2 li.sf-depth-2 .views-exposed-form .form-radios .form-item input {
+    /* hide radio buttons */
+    display: none;
+}
+#superfish-2 li.sf-depth-2 .views-exposed-form .form-checkboxes .form-item label,
+#superfish-2 li.sf-depth-2 .views-exposed-form .form-radios .form-item label {
+    width: 100%;
+    padding: 6px 10px 4px;
+    font-family: 'TradeGothicLTStdBold', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1.1;
+    color: #fff;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#superfish-2 li.sf-depth-2 .views-exposed-form .form-checkboxes .form-item label:hover,
+#superfish-2 li.sf-depth-2 .views-exposed-form .form-radios .form-item label:hover,
+#superfish-2 li.sf-depth-2 .views-exposed-form .form-checkboxes .form-item input:checked + label,
+#superfish-2 li.sf-depth-2 .views-exposed-form .form-radios .form-item input:checked + label {
+    color: #1D3D41;
+    text-decoration: none;
+}
+
+
+
+
+/* =============================================================================
+ *   Messages
+ * ========================================================================== */
+
+/* Left and right margin are set by the global gutter width */
+div.messages ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+div.status {}
+
+div.warning {}
+tr.warning {}
+
+div.error,
+tr.error {}
+
+.error {}
+.warning {}
+
+
+/* =============================================================================
+ *   Pagers
+ * ========================================================================== */
+
+ul.pager {
+    clear: both;
+    margin: 0;
+    text-align: center;
+}
+
+.item-list ul.pager li {
+    margin: 0;
+}
+
+ul.pager li {
+    background-image: none;
+    display: inline;
+    list-style-type: none;
+    padding: .5em;
+}
+
+ul.pager li.pager-current {
+    font-weight: 700;
+}
+
+.block ul.pager li {
+    margin: 0;
+}
+
+/*
+ * Theme the various states of pager links
+ */
+ul.pager li {}
+
+ul.pager li a {}
+
+ul.pager li a:link,
+ul.pager li a:visited {}
+
+ul.pager li a:active,
+ul.pager li a.active {}
+
+ul.pager li a:hover,
+ul.pager li a:focus {}
+
+ul.pager li.pager-item {}
+ul.pager li.first {}
+ul.pager li.last {}
+ul.pager li.pager-current {}
+ul.pager li.pager-first {}
+ul.pager li.pager-previous {}
+ul.pager li.pager-next {}
+ul.pager li.pager-last {}
+
+
+/* =============================================================================
+ *   Forms
+ * ========================================================================== */
+/*
+ * Wrapper for a form element (or group of form elements) and its label
+ */
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+    border: 1px solid #b51a00;
+}
+
+#content form {
+    overflow: hidden;  /* Prevents floating form buttons to be outside of form */
+}
+
+.form-item div.description {
+    padding: 4px 0;
+}
+
+.form-item label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.1;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #396C70;
+}
+.form-item label span.form-required {
+    color: #1D3D41;
+}
+
+.form-item .form-checkboxes,
+.form-item .form-radios {
+    display: block;
+    width: 100%;
+}
+.form-item .form-checkboxes label,
+.form-item .form-checkboxes input,
+.form-item .form-radios label,
+.form-item .form-radios input {
+    width: auto;
+    padding-left: 0.1em;
+}
+.form-item .form-checkboxes input,
+.form-item .form-radios input {
+    margin: 0%;
+    vertical-align: text-top;
+}
+
+.form-item .form-checkboxes label,
+.form-item .form-radios label {
+    width: auto;
+    vertical-align: middle;
+}
+.form-item .form-checkboxes .form-item.form-type-checkbox,
+.form-item .form-radios .form-item.form-type-radio {
+    display: inline-block;
+    margin: 0;
+}
+.form-item .form-checkbox,
+.form-item .form-radio {
+    margin: 0;
+}
+
+.form-item input.form-text,
+.form-item textarea {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    color: #396C70;
+    border: none;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    background-color: rgba(57,108,112,0.2);
+}
+
+.form-item input.form-text:focus,
+.form-item textarea:focus {
+    border: 1px solid #396C70;
+    outline: none;
+}
+input[type="file"],
+input[type="submit"] {
+    width:auto;
+    padding: 6px 10px;
+    font-size: 12px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #396C70;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    border: 1px solid #396C70;
+    background:none;
+}
+input[type="submit"] {
+    display: block;
+    float: right;
+    font-size: 16px;
+}
+input[type="submit"]:hover {
+    color: #fff;
+    background-color: rgba(57,108,112,1.0);
+}
+
+/*
+ *  Form fieldsets
+ */
+form fieldset {
+    position:relative;
+    margin: 1em 0;
+    padding: 3em 0 0;
+    background: none;
+    border: none;
+}
+form fieldset legend {
+    /* position legend inside fieldset */
+    position:absolute;
+    top: 10px;
+    left: 0;
+    font-size: 16px;
+    font-weight: bolder;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #396C70;
+
+}​
+ form fieldset span.button-operator {
+     display: none;
+ }
+
+/* =============================================================================
+ *   Comment Styling - Comments, comment wrapper, comment form
+ * ========================================================================== */
+
+/*
+ * Wrapper for the list of comments and its titles
+ */
+#comments {
+    overflow: hidden;
+    margin: 0;
+}
+
+#comments h2 {
+    border-bottom: 1px solid rgba(115,133,119,1.0);
+}
+
+#comments h2.comment-form,
+#comments h2.comment-title {
+    margin: 1.25em 0;
+    padding-left: 0.625em;
+    font-weight: normal;
+    color: #222;
+
+}
+
+/*
+ * Wrapper for a single comment
+ */
+.comment,
+#comments .at-panel {
+    margin: 1.25em 0;
+    padding: 0.625em 0;
+    border-top: 1px solid rgba(115,133,119,1.0);
+}
+
+.comment:first-of-type,
+#comments > .at-panel:first-of-type {
+    border-top: none;
+}
+
+.comment.odd {}
+
+.comment.even {}
+
+/*
+ * Preview of the comment before submitting new or updated comment
+ */
+#comments .comment-form,
+#comments .comment-preview {
+    overflow: hidden;  /* Prevents floating buttons to be outside form */
+    padding: 0.625em;
+}
+
+/*
+ * Nested comments are indented
+ */
+#comments .indented {
+    margin-left: 2.5em;
+}
+
+/*
+ * "New" marker for comments that are new for the current user
+ */
+.new {
+    color: #b51a00;
+}
+
+
+/* =============================================================================
+ *   Tables
+ * ========================================================================== */
+
+table {
+    margin: 0.625em 0;
+    padding: 0;
+    width: 100%;
+}
+
+table.sticky-header {
+    z-index: 10;
+}
+
+table,
+thead,
+tbody,
+tr,
+th,
+td {
+    border-color: #ccc;
+}
+
+table,
+td,
+th {
+    vertical-align: middle;
+}
+
+caption,
+th,
+td {
+    text-align: left;
+}
+
+thead tr {
+    font-weight: 700;
+    background-color: #e5e5e5;
+
+}
+
+td,
+th {
+    border-bottom: 0;
+    margin: 0;
+    padding: 0.375em 0.5em;
+}
+
+tbody {}
+
+tbody tr {
+    border-top: 1px solid #ccc;
+}
+
+tr.odd {
+    background: #fff;
+}
+
+tr.info,
+tr.even,
+tr:nth-child(2n+2) {
+    border-bottom: 0;
+    background-color: #f5f5f5;
+}
+
+tr.drag {}
+
+tr.drag-previous {}
+
+tr.odd td.active {
+    background-color: #eee;
+}
+
+tr.even td.active {
+    background-color: #ebebeb;
+}
+
+/* =============================================================================
+ *   Misc Global reset
+ * ========================================================================== */
+/*
+ *   Action links
+ */
+
+ul.action-links {
+    margin: 1.25em 0 0;
+    list-style: none;
+}
+
+ul.action-links li {}
+
+/*
+ * Generic styles for the more link
+ */
+.more-link {}
+
+/*
+ * Generic styles for links. See the ul.links declaration in node and comment stylesheets
+ */
+ul.links {
+    margin: 0;
+    padding: 0;
+}
+
+ul.links.inline {
+    display: block;
+}
+
+ul.links li {
+    display: inline;
+    list-style: none;
+    padding: 0 0.625em 0 0;
+}
+
+/*
+ * Feed icons
+ */
+.feed-icon {}
+
+/*
+ * Aggregator feed source
+ */
+#aggregator .feed-source .feed-icon {
+    display: inline;
+    float: none;
+    margin-right: 0.625em;
+}
+
+.feed-details dt,
+.feed-details dd {
+    display: inline;
+    margin: 0;
+}
+
+/*
+ * Search results are an ordered list so reset the margin
+ */
+.search-results {
+    margin: 0;
+}
+
+/*
+ * Buttons used by contrib modules like Media
+ */
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+}
+
+/*
+ * Password confirmation
+ */
+.password-parent,
+.confirm-parent {
+    margin: 0;
+}
+
+
+
+/* =============================================================================
+ *
+ *
+ *      Administrator mode specific element styling starts here...
+ *
+ *
+ * ========================================================================== */
+
+/*
+ * Admin menu overrides
+ */
+#admin-menu {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Devel Module
+ */
+.dev-query {
+    background: #eee;
+    padding: 2em;
+}
+
+/*
+ * Styleguide module tweaks
+ */
+#styleguide-header {
+    padding: 0 0.625em;
+}
+
+#styleguide-header .item-list {
+    font-family: inherit;
+    margin: 0 1.25em 1.25em 0;
+    min-height: 260px;
+    width: auto;
+}
+
+#tasks {
+    margin-bottom: 1em;
+}
+
+
+/* =============================================================================
+ *   Tabs (local tasks)
+ * ========================================================================== */
+#tasks {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+}
+
+ul.primary {
+    float: right;
+    font-size: 0.8em;
+    margin: 0 0 -31px;
+    padding: 10px 10px 0 5px;
+    border-bottom-color: #ccc;
+}
+
+ul.primary li {
+    display: block;
+    float: left;
+    margin: 0 1px -1px;
+}
+
+ul.primary li a {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+    margin-right: 1px;
+    padding: 0 0.625em;
+    display: block;
+    float: left;
+    height: 1.5em;
+    line-height: 1.5em;
+}
+
+ul.primary li a:hover,
+ul.primary li a:focus {
+    background-color: #eee;
+    border-color: #ccc;
+}
+
+ul.primary li.active a,
+ul.primary li.active a:hover,
+ul.primary li.active a:focus {
+    background-color: #fff;
+    border-bottom-color: #fff;
+}
+
+ul.secondary {
+    border-bottom: 1px solid #ccc;
+    margin: 1em 0 0;
+    padding: 0 .3em 1em;
+}
+
+ul.secondary li {
+    border-right: 0;
+    list-style: none;
+    padding: 0 0.625em 0 0;
+}
+
+ul.secondary li a {}
+
+ul.secondary li a:hover,
+ul.secondary li a.active {
+    border-bottom: none;
+    text-decoration: underline;
+}
+
+
+/* =============================================================================
+ *   Unpublished nodes
+ * ========================================================================== */
+
+/*
+ * Unpublished nodes
+ */
+.node-unpublished,
+.comment-unpublished {}
+
+.node-unpublished,
+.comment-unpublished {}
+
+.node-unpublished p.unpublished,
+.comment-unpublished p.unpublished {
+    color: pink;
+    color: rgba(239, 170, 170, 0.4);
+    font-family: Impact,"Arial Narrow",Helvetica,sans-serif;
+    font-size: 4em;
+    font-weight: bold;
+    height: 0;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    text-align: center;
+    text-transform: uppercase;
+    word-wrap: break-word;
+}
+
+
+/* =============================================================================
+ *    Maintenance pages
+ * ========================================================================== */
+
+.maintenance-page {}
+.maintenance-page .container {
+    padding: 2.5em 0;
+}
+
+.maintenance-page #site-name,
+.maintenance-page #page-title {
+    margin: 0;
+}
+
+.db-offline {}
+
+.db-offline .container {
+    margin: 0 auto;
+    padding: 2.5em 0;
+    width: 100%;
+    max-width: 960px;
+}
+
+.db-offline div.messages {
+    margin: 1.25em 0 0;
+}
+
+.db-offline #content {
+    padding: 1.25em 0;
+}
+
+
+
+
+/* =============================================================================
+ *
+ *
+ *      Common Blocks starts here...
+ *
+ *
+ * ========================================================================== */
+
+/* =============================================================================
+ *   Follow block
+ * ========================================================================== */
+#block-follow-site .block-inner {
+    margin: 0;
+}
+#block-follow-site .follow-links {
+    max-width: 50em;
+    margin: 0 auto;
+    text-align: center;
+}
+#block-follow-site .follow-links a.follow-link {
+    float: none;
+    display: inline-block;
+    background-image: none !important;
+    padding: 0.1em 0.5em;
+    height: auto;
+    font-size: 1.5em;
+    line-height: 1.5;
+    color: #222;
+    border: solid 0.08em #222;
+    border-radius: .1em;
+}
+#block-follow-site .follow-links .follow-link-this-site:after {
+    font-family: FontAwesome;
+    content: "\f09e";
+}
+#block-follow-site .follow-links .follow-link-facebook:after {
+    font-family: FontAwesome;
+    content: "\f09a";
+}
+#block-follow-site .follow-links .follow-link-googleplus:after {
+    font-family: FontAwesome;
+    content: "\f0d5";
+}
+#block-follow-site .follow-links .follow-link-xing:after {
+    font-family: FontAwesome;
+    content: "\f168";
+}
+#block-follow-site .follow-links .follow-link-linkedin:after {
+    font-family: FontAwesome;
+    content: "\f0e1";
+}
+
+/* =============================================================================
+ *   ShareThis links block
+ * ========================================================================== */
+.block-sharethis .block-inner {
+    margin: 0;
+}
+.block-sharethis .block-inner .sharethis-wrapper {
+    max-width: 50em;
+    margin: 0 auto;
+    text-align: center;
+}
+.sharethis-wrapper > span .stButton .stLarge {
+    background-image: none !important;
+    font-size: 2em;
+    color: #222;
+}
+
+.st_facebook_large .stButton .stLarge:before {
+    font-family: FontAwesome;
+    content: "\f09a";
+    display: inline-block;
+    padding: 0;
+}
+.st_twitter_large .stButton .stLarge:before {
+    font-family: FontAwesome;
+    content: "\f099";
+    display: inline-block;
+    padding: 0;
+}
+.st_googleplus_large .stButton .stLarge:before {
+     font-family: FontAwesome;
+     content: "\f0d5";
+     display: inline-block;
+     padding: 0;
+}
+.st_pinterest_large .stButton .stLarge:before {
+    font-family: FontAwesome;
+    content: "\f0d2";
+    display: inline-block;
+    padding: 0;
+}
+.st_sharethis_large .stButton .stLarge:before {
+    font-family: FontAwesome;
+    content: "\f1e0";
+    display: inline-block;
+    padding: 0;
+}
+
+
+/* =============================================================================
+ *
+ *
+ *      jQuery UI (1.10 up) / other widgets starts here...
+ *
+ *
+ * ========================================================================== */
+
+/* =============================================================================
+ *   General settings (header, content, border, corner, states, icon)
+ * ========================================================================== */
+.ui-widget-overlay {
+    background: #1D3D41 none;
+    opacity: 0.6;
+}
+.ui-widget {
+    font-family: inherit;
+    font-size: 1em;
+    margin: 0;
+}
+.ui-widget-header {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #396C70;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+.ui-widget-content {
+    color: #396C70;
+    background: none #fff;
+    border: none;
+}
+
+/* corners */
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+    border-top-right-radius: 0.5em;
+}
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+    border-top-left-radius: 0.5em;
+}
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+    border-bottom-right-radius: 0.5em;
+}
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+    border-bottom-left-radius: 0.5em;
+}
+
+/* states */
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+    font-weight: 400;
+    color: #396C70;
+    border: 1px solid #bbb;
+    background: #ddd none;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+    font-weight: 400;
+    color: #1D3D41;
+    border: 1px solid #ccc;
+    background: #fff none;
+}
+.ui-widget .ui-state-default a, .ui-widget .ui-state-default a:link, .ui-widget .ui-state-default a:visited {
+    color: #396C70;
+    text-decoration: none;
+    outline: none;
+}
+.ui-widget .ui-state-active a, .ui-widget .ui-state-active a:link, .ui-widget .ui-state-active a:visited {
+    color: #1D3D41;
+    text-decoration: none;
+    outline: none;
+}
+.ui-widget .ui-state-hover a, .ui-widget .ui-state-hover a:hover, .ui-widget .ui-state-hover a:link, .ui-widget .ui-state-hover a:visited {
+    color: #1D3D41;
+    text-decoration: none;
+}
+
+/* Icons */
+.ui-widget .ui-icon {
+    display: none;
+}
+
+/* =============================================================================
+ *   jQuery / Dialog
+ * ========================================================================== */
+/* ui dialog with top arrow */
+.ui-dialog {
+    position: relative;
+    padding: 0 0 10px;
+    outline: none;
+    border: none;
+    border-radius: 0.5em;
+    box-shadow: 5px 5px 12px -4px rgba(198,47,32,0.8);
+}
+.ui-dialog:before,
+.ui-dialog:after {
+    /* arrow on top of dialog */
+    content: ' ';
+    position: absolute;
+    top: -12px;
+    height: 0;
+    margin: 0;
+}
+.ui-dialog:before {
+    /* left arrow part */
+    left: 0;
+    right: 16%;
+    border: none;
+    border-right: 12px solid #fff;
+    border-top: 12px solid transparent;
+}
+.ui-dialog:after {
+    /* right arrow part */
+    left: 84%;
+    right: 0;
+    border: none;
+    border-left: 12px solid #fff;
+    border-top: 12px solid transparent;
+}
+
+/* Dialog titlebar */
+.ui-dialog.no-close .ui-dialog-titlebar-close {
+    display:none;
+}
+.ui-dialog .ui-dialog-titlebar {
+    height: 1.25em;
+    margin: 0.25em;
+    padding: 0.4em 1em;
+    border-radius: 0.25em;
+    border: none;
+    background: none #fff;
+}
+.ui-dialog .ui-dialog-titlebar .ui-dialog-title {
+    display: none;
+}
+.ui-dialog-titlebar .ui-dialog-titlebar-close {
+    top: 1em;
+    width: 1.25em;
+    height: 1.25em;
+    border-radius: 0.25em;
+    border: none;
+    background: none #fff;
+}
+.ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon-closethick {
+    display: block;
+    width: 1em;
+    height: 1em;
+}
+.ui-dialog-titlebar .ui-dialog-titlebar-close .ui-button-text {
+    display: none;
+}
+
+/* dialog content */
+.ui-dialog .ui-dialog-content {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-y: auto;
+    padding: 10px;
+    width: 100% !important;
+    background: #fff none;
+    border: none;
+}
+.ui-dialog  .ui-dialog-buttonpane {
+    border: none;
+    background: none #fff;
+}
+.ui-dialog input[type="submit"] {
+    display: block;
+    float: right;
+    margin: 0 0 0.4em 1em;
+    font-size: 0.8em;
+}
+.ui-dialog .ajax-progress .message {
+    display: none;
+}
+
+
+
+
+/* =============================================================================
+ *  Views Flexslider slideshow block made responsive
+ * ========================================================================== */
+/*
+ *  Field flexslider
+ */
+.field-item > .flex-nav-container {
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+}
+.field-item > .flex-nav-container > .flexslider {
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    padding-bottom: 0;
+    border: none;
+    border-radius: 0;
+    background: none;
+}
+.field-item > .flex-nav-container > .flexslider ul.slides img {
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+    max-width: none;
+}
+
+.field-item > .flex-nav-container > .flexslider .flex-caption {
+    display: none;
+}
+
+/* navigation at the bottom inside the panel */
+.flex-control-nav {
+    position: absolute;
+    bottom: 0;
+    outline: none;
+    text-align: center;
+    width: 100%;
+    z-index: 5; /* guarantees controls above direction navigation */
+}
+.flex-control-nav li a {
+    cursor: pointer;
+    display: block;
+    width: 10px; /* image size */
+    height: 10px;
+    text-indent: -999em;
+    background: url("images/fs_control_nav_ring_white.png") no-repeat scroll 0 0;
+    background-size: cover;
+}
+.flex-control-nav li a:hover {
+    /* get middle image */
+    background-position: 0 -10px;
+    cursor: default;
+}
+.flex-control-nav li a.active {
+    /* get last image */
+    background-position: 0 -20px;
+    cursor: default;
+}
+
+
+/* =============================================================================
+ *    User login / register / password pages
+ * ========================================================================== */
+/*
+ * General settings
+ */
+.page-user #user_register_form,
+.page-user #user_login_form,
+.page-user .create-account,
+.page-user #user_pass_form {
+    clear: both;
+    float: none;
+    width: auto;
+}
+
+.page-user #user-register-form h1,
+.page-user #user_login_form h1,
+.page-user .create-account h2,
+.page-user #user_pass_form h1 {
+    font: normal 300 38px/38px 'ClarendonLTStdRoman', Georgia, "Times New Roman", Times, serif;
+    color: #396C70;
+}
+
+.page-user #user-register-form .form-submit,
+.page-user #user_login_form .form-submit,
+.page-user #user_pass_form .form-submit,
+.page-user a.login-register {
+    margin-left: 0;
+    padding: 0.625em 1em;
+    font-size: 1em;
+    color: white;
+    text-transform: none;
+    line-height: 1.2;
+    -moz-border-radius: 0.25em;
+    -webkit-border-radius: 0.25em;
+    border-radius: 0.25em;
+    border: none;
+    background: #396C70;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #396C70), color-stop(1, #1D3D41));
+    background: -moz-linear-gradient(top center, #396C70 0%, #1D3D41 100%);
+}
+.page-user #user-register-form .form-submit:hover,
+.page-user #user_pass_form .form-submit:hover,
+.page-user a.login-register:hover {
+    background: #1D3D41;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1D3D41), color-stop(1, #396C70));
+    background: -moz-linear-gradient(top center, #1D3D41 0%, #396C70 100%);
+}
+.page-user #user_login_form .form-submit {
+    background: #396C70;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #396C70), color-stop(1, #1D3D41));
+    background: -moz-linear-gradient(top center, #396C70 0%, #1D3D41 100%);
+}
+.page-user #user_login_form .form-submit:hover {
+    background: #1D3D41;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1D3D41), color-stop(1, #396C70));
+    background: -moz-linear-gradient(top center, #1D3D41 0%, #396C70 100%);
+}
+/*
+ * User login page
+ */
+.page-user form#user-login,
+.page-user form#user-pass {
+    position: relative;
+    padding: 50px 0;
+    border: none;
+}
+.page-user #user_login_form,
+.page-user #user_pass_form {
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 66%;
+    vertical-align: top;
+    margin: 0 auto;
+    padding: 2em;
+    border: none;
+}
+
+.page-user form#user-login #user_login_form .form-actions-wrapper {
+    position: relative;
+    padding: 1em 0 0;
+}
+.page-user form#user-login #user_login_form .login-password {
+    display: inline-block;
+    margin:  0.5em 0;
+    color: #396C70;
+}
+.page-user form#user-login #user_login_form .login-password:hover {
+    color: #1D3D41;
+    text-decoration: underline;
+}
+.page-user form#user-login #user_login_form div.form-actions {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    vertical-align: middle;
+    margin: 0;
+}
+.page-user a.login-register {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 2em;
+}
+
+/*
+ * User register / password pages
+ */
+.page-user form#user-register-form .form-actions,
+.page-user form#user-pass .form-actions {
+    margin-top: 2em;
+}
+.page-user form#user-register-form .form-actions .form-submit,
+.page-user form#user-pass .form-actions  .form-submit {
+    float: right;
+}
+.page-user form#user-register-form .form-actions .back-to-login,
+.page-user form#user-pass .back-to-login {
+    float: left;
+    margin: 0;
+}
+.page-user form#user-register-form .form-actions .back-to-login .login-account,
+.page-user form#user-pass .back-to-login .login-account {
+    display: inline-block;
+    margin-top:  0.5em;
+    color: #396C70;
+}
+.page-user form#user-register-form .form-actions .back-to-login:before,
+.page-user form#user-pass .back-to-login:before {
+    content: '\f112';
+    font-family: "fontawesome";
+    color: #396C70;
+    text-align: center;
+    padding: 0.3em;
+}
+.page-user form#user-register-form .form-actions .back-to-login .login-account:hover,
+.page-user form#user-pass .back-to-login .login-account:hover {
+    color: #1D3D41;
+    text-decoration: underline;
+}
+
+
+/* =============================================================================
+ *
+ *
+ *      Site specific element styling starts here...
+ *
+ *
+ * ========================================================================== */
+
+/* ==================================================================================
+ *   Node general styling
+ * ================================================================================== */
+.node.node-full .field-name-field-images  .flex-nav-container {
+    width: auto;
+}
+.node.node-full .field-name-field-images  .flex-nav-container .flex-control-nav {
+    display: block;
+    position: fixed;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    width: auto;
+}
+.node.node-full .group-description {
+    cursor: pointer;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #e6e6e6;
+    z-index: 10;
+}
+body.map-selected .node.node-full .group-description,
+body.map-selected .node.node-full .field-name-field-images  .flex-nav-container .flex-control-nav {
+    display: none;
+}
+.node.node-full .group-description:before,
+.node.node-full .group-description:after {
+    /* arrow on top of description box */
+    content: ' ';
+    position: absolute;
+    top: -12px;
+    height: 0;
+    margin: 0;
+}
+.node.node-full .group-description.box-visible:before {
+    /* arrow on top of description box */
+    left: 50%;
+    right: 0;
+    border: none;
+    border-left: 12px solid transparent;
+    border-bottom: 12px solid #e6e6e6;
+}
+.node.node-full .group-description.box-visible:after {
+    /* arrow on top of description box */
+    left: 0;
+    right: 50%;
+    border: none;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #e6e6e6;
+}
+.node.node-full .group-description:before {
+    /* arrow on top of description box */
+    left: 0;
+    right: 50%;
+    border: none;
+    border-right: 12px solid #e6e6e6;
+    border-top: 12px solid transparent;
+}
+.node.node-full .group-description:after {
+    /* arrow on top of description box */
+    left: 50%;
+    right: 0;
+    border: none;
+    border-left: 12px solid #e6e6e6;
+    border-top: 12px solid transparent;
+}
+
+.node.node-full .group-desc-header {
+    position: relative;
+    margin: 0.5em;
+}
+.node.node-full .group-desc-header > .field {
+    display: inline-block;
+    margin: 0;
+    padding: 10px 8px 6px;
+    text-align: center;
+    line-height: 1.2;
+    color: #396C70;
+    vertical-align: middle;
+}
+.node.node-full .group-desc-header .field-name-title h2 {
+    margin: 0;
+    padding: 0;
+    font-family: 'TradeGothicLTStdBold', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.node.node-full .group-desc-header .field-name-field-short-description {
+    display: none;
+    margin: 0;
+    font-family: 'TradeGothicLTStdRegular', Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    border-left: 1px dashed #396C70;
+}
+.node.node-full .group-desc-header .field-name-booking-link {
+    position: absolute;
+    right: 0;
+    padding: 6px;
+}
+.node.node-full .group-desc-header .field-name-booking-link h4 {
+    cursor: pointer;
+    margin: 0;
+    padding: 0.3em 0.5em 0.1em;
+    font-family: 'TradeGothicLTStdRegular',Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: uppercase;
+    line-height: 1;
+    color: #C62F20;
+    border: 1px solid #C62F20;
+    border-radius: 0.25em;
+}
+.node.node-full .group-desc-header .field-name-booking-link h4:hover {
+    color: #7F1D14;
+    border: 1px solid #7F1D14;
+    background-color: rgba(255,255,255,0.6);
+}
+
+.node.node-full .group-desc-body {
+    display: block;
+    position: relative;
+    overflow-y: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 1em 0.5em;
+    max-height: 250px;
+}
+.node.node-full .group-desc-body .field-name-body {
+    padding: 8px;
+    font-family: 'TradeGothicLTStdCn-18', Arial, Helvetica, sans-serif;
+    color: #396C70;
+    text-align: left;
+}
+.node.node-full .group-desc-body .field-name-body h1,
+.node.node-full .group-desc-body .field-name-body h2,
+.node.node-full .group-desc-body .field-name-body h3,
+.node.node-full .group-desc-body .field-name-body h4 {
+    margin: 0 0 14px;
+    font-family: 'ClarendonLTStdRoman', Georgia, "Times New Roman", Times, serif;
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+.node.node-full .group-desc-body .field-name-body p {
+    margin: 0 0 14px;
+    font-family: 'TradeGothicLTStdCn-18', Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.2;
+}
+.node.node-full .group-desc-body .field-name-field-special-link {
+    position: absolute;
+    top: -4px;
+    right: 0.5em;
+    padding: 6px;
+}
+.node.node-full .group-desc-body .field-name-field-special-link a {
+    padding: 0.4em 0.5em 0;
+    font-family: 'TradeGothicLTStdRegular', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: #396C70;
+    border: 1px solid #396C70;
+    border-radius: 3px;
+}
+.node.node-full .group-desc-body .field-name-field-special-link a:hover {
+    text-decoration: none;
+    color: #1D3D41;
+    border: 1px solid #1D3D41;
+    background-color: rgba(255,255,255,0.6);
+}
+
+/* ==================================================================================
+ *   Node rooms menu block styling
+ * ================================================================================== */
+.node.node-room .field-name-rooms-menu-block,
+.node.node-room .field-name-rooms-menu-block-deutsch- {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 600px;
+    width: 227px;
+    background-color: #e6e6e6;
+    cursor: pointer;
+}
+body.map-selected .node.node-room .field-name-rooms-menu-block,
+body.map-selected .node.node-room .field-name-rooms-menu-block-deutsch- {
+    display: none;
+}
+.node.node-room .field-name-rooms-menu-block:before,
+.node.node-room .field-name-rooms-menu-block:after,
+.node.node-room .field-name-rooms-menu-block-deutsch-:before,
+.node.node-room .field-name-rooms-menu-block-deutsch-:after {
+    /* arrow on top of room menu block */
+    content: ' ';
+    position: absolute;
+    top: -12px;
+    height: 0;
+    margin: 0;
+}
+.node.node-room .field-name-rooms-menu-block.box-visible:before,
+.node.node-room .field-name-rooms-menu-block-deutsch-.box-visible:before {
+    /* arrow on top of room menu block */
+    left: 50%;
+    right: 0;
+    border: none;
+    border-left: 12px solid transparent;
+    border-bottom: 12px solid #e6e6e6;
+}
+.node.node-room .field-name-rooms-menu-block.box-visible:after,
+.node.node-room .field-name-rooms-menu-block-deutsch-.box-visible:after {
+    /* arrow on top of room menu block */
+    left: 0;
+    right: 50%;
+    border: none;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #e6e6e6;
+}
+.node.node-room .field-name-rooms-menu-block:before,
+.node.node-room .field-name-rooms-menu-block-deutsch-:before {
+    /* arrow on top of room menu block */
+    left: 0;
+    right: 50%;
+    border: none;
+    border-right: 12px solid #e6e6e6;
+    border-top: 12px solid transparent;
+}
+.node.node-room .field-name-rooms-menu-block:after,
+.node.node-room .field-name-rooms-menu-block-deutsch-:after {
+    /* arrow on top of room menu block */
+    left: 50%;
+    right: 0;
+    border: none;
+    border-left: 18px solid #e6e6e6;
+    border-top: 18px solid transparent;
+}
+
+.node.node-room .field-name-rooms-menu-block ul,
+.node.node-room .field-name-rooms-menu-block ul li,
+.node.node-room .field-name-rooms-menu-block-deutsch- ul,
+.node.node-room .field-name-rooms-menu-block-deutsch- ul li {
+    list-style: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.node.node-room .field-name-rooms-menu-block h2.block-title,
+.node.node-room .field-name-rooms-menu-block-deutsch- h2.block-title {
+    display: inline-block;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 18px 16px 14px;
+    width: 100%;
+    font-family: 'TradeGothicLTStdRegular', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.2;
+    color: #396C70;
+    vertical-align: middle;
+}
+.node.node-room .field-name-rooms-menu-block.box-visible h2.block-title,
+.node.node-room .field-name-rooms-menu-block-deutsch-.box-visible h2.block-title {
+    display: none;
+}
+
+.node.node-room .field-name-rooms-menu-block .menu-block-wrapper,
+.node.node-room .field-name-rooms-menu-block-deutsch- .menu-block-wrapper {
+    position: relative;
+    overflow-y: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.5em 0 0;
+}
+/* menu elements */
+.node.node-room .field-name-rooms-menu-block li.menu-rooms div.menu-room,
+.node.node-room .field-name-rooms-menu-block-deutsch- li.menu-rooms div.menu-room {
+    border-bottom: 1px dashed #1D3D41;
+}
+.node.node-room .field-name-rooms-menu-block li.menu-rooms div.menu-room.views-row-last,
+.node.node-room .field-name-rooms-menu-block-deutsch- li.menu-rooms div.menu-room.views-row-last {
+    border: none;
+}
+.node.node-room .field-name-rooms-menu-block li.menu-rooms a,
+.node.node-room .field-name-rooms-menu-block li.menu-rooms a:link,
+.node.node-room .field-name-rooms-menu-block-deutsch- li.menu-rooms a,
+.node.node-room .field-name-rooms-menu-block-deutsch- li.menu-rooms a:link {
+    padding: 6px 10px 4px;
+    font-family: 'TradeGothicLTStdBold', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 1.1;
+    color: #1D3D41;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    outline: 0;
+    border: none;
+}
+.node.node-room .field-name-rooms-menu-block li.menu-rooms a:hover,
+.node.node-room .field-name-rooms-menu-block li.menu-rooms a:focus,
+.node.node-room .field-name-rooms-menu-block li.menu-rooms a:active,
+.node.node-room .field-name-rooms-menu-block li.menu-rooms a.active,
+.node.node-room .field-name-rooms-menu-block-deutsch- li.menu-rooms a:hover,
+.node.node-room .field-name-rooms-menu-block-deutsch- li.menu-rooms a:focus,
+.node.node-room .field-name-rooms-menu-block-deutsch- li.menu-rooms a:active,
+.node.node-room .field-name-rooms-menu-block-deutsch- li.menu-rooms a.active {
+    outline: 0;
+    color: #396C70;
+    text-decoration: none;
+}
+
+/* Special rooms menus */
+.node.node-room .field-name-rooms-menu-block li.menu-special-rooms,
+.node.node-room .field-name-rooms-menu-block-deutsch- li.menu-special-rooms {
+    margin: 0;
+    padding: 0.5em 0;
+    background-color: #1D3D41;
+}
+.node.node-room .field-name-rooms-menu-block li.menu-special-rooms span.menu-special-rooms-title,
+.node.node-room .field-name-rooms-menu-block-deutsch- li.menu-special-rooms span.menu-special-rooms-title {
+    padding: 0 1em;
+    font-size: 0.8em;
+    color: #396C70;
+    background-color: #1D3D41;
+}
+.node.node-room .field-name-rooms-menu-block li.menu-special-rooms .view a,
+.node.node-room .field-name-rooms-menu-block li.menu-special-rooms .view a:link,
+.node.node-room .field-name-rooms-menu-block-deutsch- li.menu-special-rooms .view a,
+.node.node-room .field-name-rooms-menu-block-deutsch- li.menu-special-rooms .view a:link {
+    height: 2em;
+    padding: 0 1em;
+    font-family: 'TradeGothicLTStdBold', Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    color: #396C70;
+    line-height: 2em;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    outline: 0;
+    border: none;
+}
+.node.node-room .field-name-rooms-menu-block li.menu-special-rooms .view a:hover,
+.node.node-room .field-name-rooms-menu-block-deutsch- li.menu-special-rooms .view a:hover {
+    color: #fff;
+    border: none;
+}
+
+
+/* ==================================================================================
+ *   Custom map info box styling
+ * ================================================================================== */
+.view-custom-map .custom-map {
+    width: 100%;
+    height: auto;
+    min-height: 350px;
+}
+.view-custom-map .custom-map-info-box {
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    background-color: #396C70;
+    z-index: 10;
+}
+.view-custom-map .custom-map-info-header {
+    margin: 0;
+}
+.view-custom-map .custom-map-info-body {
+    overflow-y: auto;
+    max-height: 250px;
+}
+
+.view-custom-map .custom-map-info-header .field-name-field-short-description {
+    display: none;
+}
+
+
+/* ==================================================================================
+ *   Booking iFrame styling
+ * ================================================================================== */
+iframe#sihot-rothaus {
+    margin: 0;
+    width: 500px;
+    height: 700px;
+    border: none;
+}
+
+
+
+/* ==================================================================================
+ *   Contact block teaser styling
+ * ================================================================================== */
+.node-contacts.node-teaser .at-panel>.region>.region-inner {
+    overflow: hidden;
+    background-color: #fff;
+}
+.node-contacts.node-teaser .field-name-field-slider figure {
+    line-height: 0;
+}
+.node-contacts.node-teaser .field-name-field-slider,
+.node-contacts.node-teaser .group-contact-body {
+    display: inline-block;
+    vertical-align: top;
+    width: 120px;
+    height: 120px;
+}
+.node-contacts.node-teaser .group-contact-body {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 6px;
+    height: 120px;
+}
+.node-contacts.node-teaser .field-name-body {
+    margin: 15px 0 20px;
+}
+.node-contacts.node-teaser .field-name-body p {
+    margin: 0 0 12px;
+    font-family: 'TradeGothicLTStdCn-18', "Arial Narrow", sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    color: #396C70;
+}
+.node-contacts.node-teaser .field-name-field-email,
+.node-contacts.node-teaser .field-name-field-phone {
+    font-family: 'TradeGothicLTStdBoldCn-20', Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #C62F20;
+    text-align: left;
+    line-height: 1.3;
+    font-weight: normal;
+}
+.node-contacts.node-teaser .field-name-field-email a,
+.node-contacts.node-teaser .field-name-field-email a:visited {
+    color: #C62F20;
+}
+.node-contacts.node-teaser .field-name-field-email a:active,
+.node-contacts.node-teaser .field-name-field-email a.active,
+.node-contacts.node-teaser .field-name-field-email a:hover,
+.node-contacts.node-teaser .field-name-field-email a:focus {
+    outline: none;
+    text-decoration: underline;
+    color: #C62F20;
+}
+.node-contacts.node-teaser .field-name-field-email a:before {
+    content: '\f0e0';
+    font-family: "fontawesome";
+    color: #C62F20;
+    text-align: center;
+    padding-right: 0.5em;
+}
+.node-contacts.node-teaser .field-name-field-phone .field-item:before {
+    content: '\f095';
+    font-family: "fontawesome";
+    color: #C62F20;
+    text-align: center;
+    padding-right: 0.5em;
+}
+
+/* ==================================================================================
+ *   Contact block full styling
+ * ================================================================================== */
+.node-contacts.node-full .field-name-field-email,
+.node-contacts.node-full .field-name-field-phone {
+    display: inline-block;
+    width: 200px;
+    font-family: 'TradeGothicLTStdBoldCn-20', Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: #C62F20;
+    text-align: right;
+    line-height: 1.3;
+    font-weight: normal;
+}
+.node-contacts.node-full .field-name-field-email a,
+.node-contacts.node-full .field-name-field-email a:visited {
+    color: #C62F20;
+}
+.node-contacts.node-full .field-name-field-email a:active,
+.node-contacts.node-full .field-name-field-email a.active,
+.node-contacts.node-full .field-name-field-email a:hover,
+.node-contacts.node-full .field-name-field-email a:focus {
+    outline: none;
+    text-decoration: underline;
+    color: #C62F20;
+}
+.node-contacts.node-full .field-name-field-email a:before {
+    content: '\f0e0';
+    font-family: "fontawesome";
+    color: #C62F20;
+    text-align: center;
+    padding-right: 0.5em;
+}
+.node-contacts.node-full .field-name-field-phone .field-item:before {
+    content: '\f095';
+    font-family: "fontawesome";
+    color: #C62F20;
+    text-align: center;
+    padding-right: 0.5em;
+}
+body.map-selected .node-contacts.node-full .field-name-field-email,
+body.map-selected .node-contacts.node-full .field-name-field-phone,
+body.map-selected .node-contacts.node-full .field-name-field-email a:before,
+body.map-selected .node-contacts.node-full .field-name-field-phone .field-item:before,
+body.map-selected .node-contacts.node-full .field-name-field-email a,
+body.map-selected .node-contacts.node-full .field-name-field-email a:visited {
+    color: #fff;
+}

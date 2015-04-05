@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'ClarendonLTStdRoman';
+    src: url('clarendonltstd.eot');
+    src: url('clarendonltstd.eot') format('embedded-opentype'),
+         url('clarendonltstd.woff2') format('woff2'),
+         url('clarendonltstd.woff') format('woff'),
+         url('clarendonltstd.ttf') format('truetype'),
+         url('clarendonltstd.svg#ClarendonLTStdRoman') format('svg');
+}

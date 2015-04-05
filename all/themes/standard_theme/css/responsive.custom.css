@@ -1,0 +1,225 @@
+/*
+ * responsive.custom.css is for custom media queries that are not set via the
+ * theme settings, such as cascading media queries.
+ *
+ * By default all the other responsive stylesheets used in Adaptivetheme use a
+ * "stacking method", however cascading media queries use a waterfall method so
+ * you can leverage the cascade and inheritance for all browsers that support
+ * media queries, regardless of screen size.
+ *
+ * @SEE http://zomigi.com/blog/essential-considerations-for-crafting-quality-media-queries/#mq-overlap-stack
+ *
+ * NOTE: this file loads by default, to disable got to your theme settings and
+ * look under the "CSS" settings tab.
+ */
+@media only screen and (min-width: 30em) {  /* >= 480 px*/
+    /* Header: Logo and menus */
+    #logo {
+        width: 130px;
+        height: 58px;
+        left: 20px;
+    }
+    #block-superfish-1 {
+        margin: 0 10px 0 0;
+    }
+    #superfish-2 li.sf-depth-2 div.menu-attach-block-wrapper {
+        display: block;
+        padding: 12px;
+        box-shadow: none;
+    }
+    #header {
+        height: 75px;
+    }
+    #header .region-header {
+        top: 40px;
+    }
+    /* Description and info box */
+    .node.node-full .group-description {
+        left: 20px;
+        width: 420px;
+    }
+    .view-custom-map .custom-map-info-box {
+        left: 20px;
+        width: 380px;
+    }
+    .node.node-full .group-desc-header .field-name-field-short-description,
+    .view-custom-map .custom-map-info-header .field-name-field-short-description {
+        display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 40em) { /* >= 640 px*/
+    /* Header: Logo and menus */
+    #logo {
+        top: 14px;
+        width: 217px;
+        height: 96px;
+    }
+}
+
+@media only screen and (min-width: 48em) { /* >= 768 px*/
+    /*   General layout  */
+    #header {
+        height:75px;
+    }
+    #columns > #content-column {
+        padding: 75px 0 55px;
+    }
+    #footer {
+        height: 55px;
+    }
+    .node.node-full .field-name-field-images  .flex-nav-container .flex-control-nav,
+    .node.node-full .group-description,
+    .node.node-room .field-name-rooms-menu-block,
+    .node.node-room .field-name-rooms-menu-block-deutsch-,
+    .view-custom-map .custom-map-info-box {
+        bottom: 55px;
+    }
+    #columns .region-content-main,
+    #columns .region-content-aside {
+        display: inline-block;
+        width: 25%;
+    }
+    #columns .region-content-main.selected,
+    #columns .region-content-aside.selected {
+        display: inline-block;
+        width: 75%;
+    }
+    #columns .region-content-main:not(.selected) .switch-to-home,
+    #columns .region-content-aside:not(.selected) .switch-to-map {
+        display: none;
+    }
+    /* Header: Logo and menus */
+    #block-superfish-1 {
+        right: 25%;
+        margin: 0 -175px 0 0;
+        width: 75%;
+    }
+    #superfish-1 li.sf-depth-1 {
+        padding-right: 5%;
+    }
+    #superfish-1 li.sf-depth-1 a,
+    #superfish-1 li.sf-depth-1 span {
+        font-size: 18px;
+    }
+    #superfish-1 li#menu-2032-1 span {
+        padding: 10px 0 5px;
+        width: 175px;
+    }
+    body.node-type-room:not(.map-selected) #superfish-1 > li#menu-2032-1 > ul {
+        /* show booking menu when rooms are displayed */
+        left: 0px !important;
+        top: 40px !important;
+    }
+
+    /* Footer */
+    #footer .contact-block  .node-contacts.node-full {
+        display: block;
+    }
+    .node-contacts.node-full .field-name-field-email,
+    .node-contacts.node-full .field-name-field-phone {
+        font-size: 17px;
+        text-align: right;
+    }
+
+    /* Description / info box */
+    .view-custom-map .custom-map-info-box {
+        left: 27%;
+    }
+    .node.node-full .group-description {
+        left: 20px;
+        width: 420px;
+    }
+    .node.node-full .field-name-field-images  .flex-nav-container .flex-control-nav {
+        left: 450px;
+        right: auto;
+    }
+    .node.node-full .group-desc-body,
+    .view-custom-map .custom-map-info-body {
+        max-height: 400px;
+    }
+
+}
+
+@media only screen and (min-width: 60em) { /* >= 960 px*/
+    /* Footer */
+    #footer .contact-block  .node-contacts.node-teaser {
+        display: block;
+    }
+    .node-contacts.node-teaser .flex-control-nav {
+        bottom: 7px;
+    }
+}
+
+@media only screen and (min-width: 64em) { /* >= 1024 px*/
+    /* =============================================================================
+     *   General layout
+     * ========================================================================== */
+    /* Logo */
+    #logo {
+        left: 70px;
+    }
+    #block-locale-language {
+        position: absolute;
+        top: 0;
+    }
+
+
+    /* Description box */
+    .node.node-full .group-description {
+        left: 70px;
+        width: 520px;
+    }
+    .node.node-full .field-name-field-images  .flex-nav-container .flex-control-nav {
+        left: 600px;
+    }
+
+    /* Contact block */
+    #footer .contact-block .node-contacts.node-teaser {
+        width: 330px;
+        height: 150px;
+    }
+    .node-contacts.node-teaser .flex-control-nav {
+        bottom: 25px;
+    }
+    .node-contacts.node-teaser .field-name-field-slider,
+    .node-contacts.node-teaser .group-contact-body {
+        display: inline-block;
+        width: 165px;
+        height: 150px;
+    }
+    .node-contacts.node-teaser .group-contact-body {
+        padding: 6px;
+    }
+    .node-contacts.node-teaser .field-name-body {
+        margin: 30px 0 20px;
+    }
+    .node-contacts.node-teaser .field-name-field-email,
+    .node-contacts.node-teaser .field-name-field-phone {
+        font-size: 14px;
+    }
+    .node-contacts.node-teaser .field-name-body p {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 80em) { /* >= 1280 px*/
+    /* Logo */
+    #logo {
+        top: 33px;
+        width: 240px;
+        height: 110px;
+    }
+
+    /* Room menu box */
+    .node.node-room .field-name-rooms-menu-block,
+    .node.node-room .field-name-rooms-menu-block-deutsch- {
+        display: block;
+        left: 600px;
+        width: 227px;
+    }
+    .node.node-full .field-name-field-images  .flex-nav-container .flex-control-nav {
+        left: 837px;
+    }
+
+}
