@@ -250,10 +250,11 @@
             // open dialog with click on opening elements
             $openingElements.once('click-binding', function() {
                 // bind click event to all opening buttons
-                $openingElements.on('click', function() {
-                    var dlgHeight = Math.min( calcMinContentHeight(), 790 );
-                    dlg.dialog("option", "height", dlgHeight);
-                    dlg.dialog("open");
+                $(this).on('click', function() {
+                    //var dlgHeight = Math.min( calcMinContentHeight(), 790 );
+                    //dlg.dialog("option", "height", dlgHeight);
+                    //dlg.dialog("open");
+                    window.open('https://mysihot.net/SIHOTWeb/rothaus.htm?NOPAXPERGT=1A,2&LN=de', '_blank');
                 });
             });
 
